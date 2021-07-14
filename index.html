@@ -2,8 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Spot</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/cloud-sun-fill.svg">
   </head>
   <body>
     <!-- icons -->
@@ -57,7 +59,7 @@
 
         <div class="today">
           <h3>Today</h3>
-          <img src="" alt="">
+          <img src="img/cloud.png" alt="">
           <div class="temp">
             <h4>28&deg;C</h4>
             <p>Clear skies</p>
@@ -74,6 +76,20 @@
           </div>
         </div>
       </aside>
+
+      <section>
+        <div class="masthead">
+          <div class="search">
+            <i class="bi bi-search"></i>
+            <input type="text" name="city" placeholder="Enter location">
+          </div>
+          <i class="bi bi-bell bell"></i>
+          <div class="user">
+            <img class="avatar" src="img/avatar.jpeg" alt="" width="50">
+            <h2>Harley Madison<img src="img/icon-arrow.svg"></h2>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
