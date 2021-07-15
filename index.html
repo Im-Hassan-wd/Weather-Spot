@@ -6,6 +6,7 @@
     <title>Weather Spot</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/cloud-sun-fill.svg">
+    <link rel="stylesheet" href="b-icons\font\bootstrap-icons.css">
   </head>
   <body>
     <!-- icons -->
@@ -72,7 +73,7 @@
           <div class="precipation">
             <label for="precipation">Precipation:</label>
             <span>92%</span>
-            <progress id="humidity" value="92" max="100"></progress>
+            <progress id="precipation" value="92" max="100"></progress>
           </div>
         </div>
       </aside>
@@ -81,15 +82,49 @@
         <div class="masthead">
           <div class="search">
             <i class="bi bi-search"></i>
-            <input type="text" name="city" placeholder="Enter location">
+            <input type="text" name="city" placeholder="Enter a location">
           </div>
           <i class="bi bi-bell bell"></i>
           <div class="user">
-            <img class="avatar" src="img/avatar.jpeg" alt="" width="50">
+            <img class="avatar" src="img/avatar.jpeg" alt="" width="40">
             <h2>Harley Madison<img src="img/icon-arrow.svg"></h2>
+          </div>
+        </div>
+        <div class="overview">
+          <h3>Weather Forecast</h3>
+          <div class="weather">
+            <div>
+              <h4>Yesterday</h4>
+              <img src="img\cloud.png" alt="">
+              <div class="condition">
+                <h4>Partly Sunny</h4>
+                <h4>23&deg;C</h4>
+              </div>
+            </div>
+
+            <div>
+              <h4>Today</h4>
+              <img src="img\cloud.png" alt="">
+              <div class="condition">
+                <h4>Sunny</h4>
+                <h4>28&deg;C</h4>
+              </div>
+            </div>
+
+            <div>
+              <h4>Tomorrow</h4>
+              <img src="img\cloud.png" alt="">
+              <div class="condition">
+                <h4>Slight Rain</h4>
+                <h4>23&deg;C</h4>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
+    <script src="scripts/forecast.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
