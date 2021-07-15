@@ -6,16 +6,18 @@ const updateUI = (data) => {
 
   const cityDetails = data.cityDetails;
   const weather = data.weather;
+  const yesterday = data.yesterday;
+  const tomorrow = data.tomorrow;
 
   console.log(data);
   cityLocation.textContent = `${cityDetails.EnglishName}`;
   overview.innerHTML =`
     <div>
       <h4>Yesterday</h4>
-      <img src="" alt="">
+      <img src="img/icons/${yesterday.WeatherIcon}.svg" alt="">
       <div class="condition">
-        <h4>Partly Sunny</h4>
-        <h4>23&deg;C</h4>
+        <h4>${yesterday.WeatherText}</h4>
+        <h4>${yesterday.Temperature.Metric.Value}&deg;C</h4>
       </div>
     </div>
 
@@ -27,16 +29,34 @@ const updateUI = (data) => {
         <h4>${weather.Temperature.Metric.Value}&deg;C</h4>
       </div>
     </div>
+  `;
 
+  let day = `
     <div>
       <h4>Tomorrow</h4>
-      <img src="" alt="">
+      <img src="img/icons/${tomorrow.Day.Icon}.svg" alt="">
       <div class="condition">
-        <h4>Slight Rain</h4>
-        <h4>23&deg;C</h4>
+        <h4>${tomorrow.Day.IconPhrase}</h4>
+        <h4>${tomorrow.Temperature.Maximum.Value}&deg;C</h4>
       </div>
     </div>
-  `;
+  `
+  let night = `
+    <div>
+      <h4>Tomorrow</h4>
+      <img src="img/icons/${tomorrow.Night.Icon}.svg" alt="">
+      <div class="condition">
+        <h4>${tomorrow.Night.IconPhrase}</h4>
+        <h4>${tomorrow.Temperature.Maximum.Value}&deg;C</h4>
+      </div>
+    </div>
+    `;
+
+  if(weather.IsDayTime) {
+    overview.innerHTML += day;
+  } else {
+    overview.innerHTML += night;
+  }
 
 };
 
@@ -44,8 +64,10 @@ const updateCity = async (city) => {
 
   const cityDetails = await getCity(city);
   const weather = await getWeather(cityDetails.Key);
+  const yesterday = await getYesterday(cityDetails.Key);
+  const tomorrow = await getTomorrow(cityDetails.Key);
 
-  return { cityDetails, weather};
+  return { cityDetails, weather, yesterday, tomorrow};
 
 };
 
