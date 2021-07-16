@@ -1,6 +1,7 @@
 const cityForm = document.querySelector('form');
 const overview = document.querySelector('.weather');
 const cityLocation = document.querySelector('.overview span');
+const time = document.querySelector('section');
 
 const updateUI = (data) => {
 
@@ -9,7 +10,7 @@ const updateUI = (data) => {
   const yesterday = data.yesterday;
   const tomorrow = data.tomorrow;
 
-  // console.log(data);
+  console.log(data);
   cityLocation.textContent = `${cityDetails.EnglishName}`;
   overview.innerHTML =`
     <div>
@@ -54,8 +55,12 @@ const updateUI = (data) => {
 
   if(weather.IsDayTime) {
     overview.innerHTML += day;
+    time.classList.remove('night');
+    cityForm.classList.remove('night');
   } else {
     overview.innerHTML += night;
+    time.classList.add('night');
+    cityForm.classList.add('night');
   }
 
 };
