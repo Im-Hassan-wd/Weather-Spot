@@ -14,7 +14,7 @@ const updateUI = (data) => {
   overview.innerHTML =`
     <div>
       <h4>Yesterday</h4>
-      <img src="img/icons/${yesterday.WeatherIcon}.svg" alt="">
+      <img src="img/icons/${yesterday.WeatherIcon}.png" alt="">
       <div class="condition">
         <h4>${yesterday.WeatherText}</h4>
         <h4>${yesterday.Temperature.Metric.Value}&deg;C</h4>
@@ -23,7 +23,7 @@ const updateUI = (data) => {
 
     <div>
       <h4>Today</h4>
-      <img src="img/icons/${weather.WeatherIcon}.svg" alt="">
+      <img src="img/icons/${weather.WeatherIcon}.png" alt="">
       <div class="condition">
         <h4>${weather.WeatherText}</h4>
         <h4>${weather.Temperature.Metric.Value}&deg;C</h4>
@@ -34,7 +34,7 @@ const updateUI = (data) => {
   let day = `
     <div>
       <h4>Tomorrow</h4>
-      <img src="img/icons/${tomorrow.Day.Icon}.svg" alt="">
+      <img src="img/icons/${tomorrow.Day.Icon}.png" alt="">
       <div class="condition">
         <h4>${tomorrow.Day.IconPhrase}</h4>
         <h4>${tomorrow.Temperature.Maximum.Value}&deg;C</h4>
@@ -44,7 +44,7 @@ const updateUI = (data) => {
   let night = `
     <div>
       <h4>Tomorrow</h4>
-      <img src="img/icons/${tomorrow.Night.Icon}.svg" alt="">
+      <img src="img/icons/${tomorrow.Night.Icon}.png" alt="">
       <div class="condition">
         <h4>${tomorrow.Night.IconPhrase}</h4>
         <h4>${tomorrow.Temperature.Maximum.Value}&deg;C</h4>
