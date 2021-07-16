@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
 }
+body{
+  height: 100vh;
+}
 main {
   display: flex;
 }
@@ -13,8 +16,7 @@ aside {
   background: hsl(231, 69%, 60%);
   color: #fff;
   padding: 30px;
-  border-radius: 0 7px 7px 0;
-  /* height: 100vh; */
+  min-height: 100vh;
 }
 aside li {
   list-style: none;
@@ -69,7 +71,17 @@ aside li i {
   padding-right: 30px;
 }
 section {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(img/city.jpg);
+  background-position: center;
+  background-size: cover;
   width: 100%;
+}
+section.night {
+  background:  url(img/night.jpg);
+  background-position: top;
+  background-size: cover;
+  width: 100%;
+  color: #fff;
 }
 .masthead {
   display: flex;
@@ -84,19 +96,24 @@ form {
   align-items: center;
   margin-right: 30px;
   padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 form input {
+  width: 100%;
   margin-left: 10px;
   border: none;
-  background: none;
+  background: transparent;
   outline: none;
+}
+form input.night{
+  color: #999; 
 }
 .profile{
   display: flex;
   align-items: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 .bell {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -147,7 +164,9 @@ img.avatar {
   color: #fff;
 }
 .weather > div {
-  background: skyblue;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 7px;
 }
