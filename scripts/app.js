@@ -9,7 +9,7 @@ const updateUI = (data) => {
   const yesterday = data.yesterday;
   const tomorrow = data.tomorrow;
 
-  console.log(data);
+  // console.log(data);
   cityLocation.textContent = `${cityDetails.EnglishName}`;
   overview.innerHTML =`
     <div>
